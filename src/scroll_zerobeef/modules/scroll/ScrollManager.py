@@ -25,7 +25,8 @@ class ScrollManager(object):
             self.viewable_lines = self.lines - 1
 
     def __getattr__(self, name):
-        ic(self)
+        if hasattr(self, name):
+            return getattr(self, name)
 
     def get_viewable_lines(self):
         start_line = self.offset
