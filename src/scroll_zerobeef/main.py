@@ -6,7 +6,7 @@ from modules import (ColumnManager, ScrollManager, terminal_size,
 
 
 def main(stdscr):
-    with open("./modules/scroll/lipsum.txt", "r") as f:
+    with open("modules/examples/lipsum.txt", "r") as f:
         t = f.read()
     x = list(map(lambda x, y: "{x}={y}", t, [i for i in range(0, len(t))]))
     Columns = ColumnManager(stdscr, 2, 3, x)
@@ -17,7 +17,7 @@ def main(stdscr):
 if __name__ == "__main__":
     ic(terminal_size())
     test_column_size()
-    with open("./modules/scroll/lipsum.txt", "r") as f:
+    with open("modules/examples/lipsum.txt", "r") as f:
         t = f.read()
     t = t.split(".")
     scrolling_text = ScrollManager(data=t, viewable_lines=5)
